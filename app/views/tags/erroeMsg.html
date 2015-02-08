@@ -1,0 +1,10 @@
+#{ifErrors}
+<div class="error">
+    <h2>Oops, please correct these errors</h2>
+    <ul>
+        #{errors}
+            <li>${error}</li>
+        #{/errors}
+    </ul>
+</div>
+#{/ifErrors}

@@ -1,0 +1,54 @@
+#{erroeMsg /}
+<form method="post" action="business/invoice/save"
+	class="pageForm  required-validate"
+	onsubmit="return validateCallback(this, dialogAjaxDone);">
+	<input name="invoice.id" type="hidden" size="30" value="${invoice?.id}" />
+	<div class="pageContent">
+		<div class="pageFormContent" layoutH="56">
+			<p>
+				<label>&{'business.field.invoice.no'}：</label> #{if
+				invoice?.invoiceNo == null } -- #{/if} ${invoice?.invoiceNo}
+			</p>
+			<p>
+				<label>&{'business.field.invoice.client'}：</label> <input
+					class="required" value="${invoice?.client?.name}"
+					name="invoice.clientName" type="text" postField="client.name"
+					suggestFields="clientName,contacts"
+					suggestUrl="admin/Client/lookup" lookupGroup="invoice" /> <a
+					class="btnLook" href="admin/Client/select" lookupGroup="invoice">选择客户</a>
+				<span class="info">选择客户</span>
+			</p>
+
+			<p>
+				<label>&{'business.field.invoice.contacts'}：</label> <input
+					name="invoice.contacts" maxlength="120" type="text" size="30"
+					value="${invoice?.contacts}" />
+			</p>
+			<p>
+				<label>&{'business.field.invoice.phone'}：</label> <input
+					name="invoice.phone" minlength="11" maxlength="12" type="text"
+					size="30" value="${invoice?.phone}" />
+			</p>
+			<p>
+				<label>&{'business.field.invoice.directLine'}：</label> <input
+					name="invoice.directLine" type="text" size="30"
+					value="${invoice?.directLine}" />
+			</p>
+			<p>
+				<label>&{'business.field.invoice.address'}：</label> <input
+					name="invoice.address" type="text" size="30"
+					value="${invoice?.address}" />
+			</p>
+			<p>
+				<label>&{'business.field.invoice.remark'}：</label> <input
+					name="invoice.remark" type="text" size="30"
+					value="${invoice?.remark}" />
+			</p>
+
+		</div>
+		#{admin.formBar /}
+	</div>
+</form>
+
+
+

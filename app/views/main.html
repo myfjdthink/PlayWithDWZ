@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>#{get 'title' /}</title>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=${_response_encoding}" />
+
+<link rel="shortcut icon" type="image/png"
+	href="@{'/public/images/favicon.ico'}">
+
+
+<link href="@{'/public/stylesheets/themes/default/style.css'}" rel="stylesheet" type="text/css"
+	media="screen" />
+<link href="@{'/public/stylesheets/themes/css/core.css'}" rel="stylesheet" type="text/css"
+	media="screen" />
+<link href="@{'/public/stylesheets/themes/css/print.css'}" rel="stylesheet" type="text/css"
+	media="print" />
+<link href="@{'/public/stylesheets/uploadify/css/uploadify.css'}" rel="stylesheet"
+	type="text/css" media="screen" />
+<!--[if IE]>
+<link href="@{'/public/stylesheets/themes/css/ieHack.css'}" rel="stylesheet" type="text/css" media="screen"/>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<script src="@{'/public/javascripts/js/speedup.js'}" type="text/javascript"></script>
+<![endif]-->
+<script src="@{'/public/javascripts/js/jquery-1.7.2.js'}" type="text/javascript"></script>
+<!-- 可以用dwz.min.js替换前面全部dwz.*.js (注意：替换是下面dwz.regional.zh.js还需要引入)-->
+<script src="@{'/public/javascripts/bin/dwz.min.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/jquery.cookie.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/jquery.validate.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/jquery.bgiframe.js'}" type="text/javascript"></script>
+<script src="@{'/public/xheditor/xheditor-1.2.1.min.js'}" type="text/javascript"></script>
+<script src="@{'/public/xheditor/xheditor_lang/zh-cn.js'}" type="text/javascript"></script>
+<script src="@{'/public/uploadify/scripts/jquery.uploadify.js'}" type="text/javascript"></script>
+
+<!-- 自己写的util.js -->
+<script src="@{'/public/javascripts/util.js'}" type="text/javascript"></script>
+
+<!-- svg图表  supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+ -->
+<!-- <script type="text/javascript" src="@{'/public/chart/raphael.js'}"></script>
+<script type="text/javascript" src="@{'/public/chart/g.raphael.js'}"></script>
+<script type="text/javascript" src="@{'/public/chart/g.bar.js'}"></script>
+<script type="text/javascript" src="@{'/public/chart/g.line.js'}"></script>
+<script type="text/javascript" src="@{'/public/chart/g.pie.js'}"></script>
+<script type="text/javascript" src="@{'/public/chart/g.dot.js'}"></script>
+
+<script src="@{'/public/javascripts/js/dwz.core.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.util.date.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.validate.method.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.regional.zh.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.barDrag.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.drag.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.tree.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.accordion.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.ui.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.theme.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.switchEnv.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.alertMsg.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.contextmenu.js'}" type="text/javascrip"></script>
+<script src="@{'/public/javascripts/js/dwz.navTab.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.tab.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.resize.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.dialog.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.dialogDrag.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.sortDrag.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.cssTable.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.stable.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.taskBar.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.ajax.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.pagination.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.database.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.datepicker.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.effects.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.panel.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.checkbox.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.history.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.combox.js'}" type="text/javascript"></script>
+<script src="@{'/public/javascripts/js/dwz.print.js'}" type="text/javascript"></script> -->
+
+<!-- <script src="@{'/public/javascripts/js/dwz.regional.zh.js'}" type="text/javascript"></script> -->
+</head>
+<body>#{doLayout /}
+</body>
+</html>

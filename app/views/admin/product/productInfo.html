@@ -1,0 +1,53 @@
+#{ifErrors}
+<div class="error">
+    <h2>Oops, please correct these errors</h2>
+    <ul>
+        #{errors}
+            <li>${error}</li>
+        #{/errors}
+    </ul>
+</div>
+#{/ifErrors}
+<div class="pageContent">
+	<form method="post" action="product/save" class="pageForm  required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<input name="product.id" type="hidden" size="30" value="${product?.id}" />
+		<div class="pageFormContent" layoutH="56">
+		#{hello name:'Bob' /}
+		
+			
+			<p>
+				<label>货号：</label>
+				<input name="product.productName" class="required" remote="product/hasName?" type="text" size="30" value="${product?.productName}" />
+			</p>
+			<p>
+				<label>颜色：</label>
+				<input name="product.color" class="required"  type="text" size="30" value="${product?.color}" />
+			</p>
+			<p>
+				<label>100%单价：</label>
+				<input name="product.fullUnit" class="required"  type="text" size="30" value="${product?.fullUnit}" />%
+			</p>
+			<p>
+				<label>尺码：</label>
+				<input name="product.size" class="required"  type="text" size="30" value="${product?.size}" />
+			</p>
+			<p>
+				<label>实际单价：</label>
+				<input name="product.actualUnit" class=""  type="text" size="30" value="${product?.actualUnit}" />
+			</p>
+			<p>
+				<label>客户：</label>
+				<input name="product.client" class=""  type="text" size="30" value="${product?.client}" />
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!--<li><a class="buttonActive" href="javascript:;"><span>保存</span></a></li>-->
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li>
+					<div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

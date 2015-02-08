@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+*     	/index.html                             Application.index
+*       /login.html                             Application.loginPaage
+*		/login									Application.login
+*		/logout									Application.logout
+
+# Users
+GET		/user/info								UserAction.info
+*		/user/list								UserAction.list
+*		/user/save								UserAction.save
+*		/user/add								UserAction.add
+*		/user/delete							UserAction.delete
+*		/user/hasName							UserAction.hasName
+
+# Users
+GET		/product/info							ProductAction.info
+*		/product/list							ProductAction.list
+*		/product/save							ProductAction.save
+
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+GET     /themes/                                staticDir:public/themes
+
+# CRUD routes
+*       /admin/{controller}/{action}            controllers.admin.{controller}Action.{action}
+
+# Business
+*       /business/{controller}/{action}          controllers.business.{controller}Action.{action}
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

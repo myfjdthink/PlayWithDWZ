@@ -1,0 +1,29 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+form.submit=确定
+form.cancel=取消
+form.search=查询
+
+
+model.field.client.name=客户名
+model.field.client.contacts=联系人
+model.field.client.phone=手机
+model.field.client.direct.line=电话
+model.field.client.email=邮箱
+model.field.client.remark=备注
+model.field.client.address=地址
+
+
+error.massge.name.duplicate.user=已经存在名为<b>%s</b>的用户
+
+
+
+business.field.invoice.no=销售单编号
+business.field.invoice.client=客户
+business.field.invoice.contacts=联系人
+business.field.invoice.phone=手机
+business.field.invoice.directLine=电话
+business.field.invoice.address=地址
+business.field.invoice.remark=备注
+business.field.invoice.status=状态

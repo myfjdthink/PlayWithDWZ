@@ -1,0 +1,92 @@
+
+<form id="pagerForm" method="post" action="admin/Client/list">
+	<input type="hidden" name="status" value="${'$'}{param.status}">
+	<input type="hidden" name="keywords" value="${'$'}{param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" /> <input type="hidden"
+		name="numPerPage" value="${'$'}{model.numPerPage}" /> <input
+		type="hidden" name="orderField" value="${'$'}{param.orderField}" />
+</form>
+
+<script type="text/javascript">
+	function showCriterion(show) {
+		if (show) {
+			$('#searchContainer').show()
+		} else {
+			$('#searchContainer').hide()
+		}
+		$('#searchButton').attr('onclick', "showCriterion(" + show + ")")
+	}
+</script>
+
+<div class="pageHeader">
+	<form onsubmit="return navTabSearch(this);" action="admin/client/list"
+		method="post">
+		<div id="searchContainer">
+			<div class="searchBar">
+				<table class="searchContent">
+					<tr>
+						<td>&{'model.field.client.name'}：<input type="text"
+							name="client.name" value="${client.name}" />
+						</td>
+						<td width="20px"></td>
+						<td>&{'model.field.client.direct.line'}：<input type="text"
+							name="client.phone" value="${client.phone}" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="center">
+							<button type="submit">&{'form.search'}</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- <div id='showSearchButton' >
+		<a id='' href="javascript:void" onclick="showCriterion(true);"  title="显示查询条件"><span>&lt;&lt;查询条件</span></a>
+		</div>
+		<div id='hideSearchButton' >
+		<a id='searchButton' href="javascript:void" onclick="showCriterion(true);"  title="显示查询条件"><span>&lt;&lt;查询条件</span></a>
+		</div> -->
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="admin/client/add" target="dialog"
+				mask="true" maxable="true" minable="true" resizable="true"
+				drawable="true" rel="client_info" width="450" height="330"><span>添加</span></a></li>
+			<li><a class="delete" href="admin/client/delete?id={sid_client}"
+				target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="icon" href="admin/client/copy?id={sid_client}"
+				target="dialog" rel="client_info" title="223"><span>复制</span></a></li>
+			<li class="line">line</li>
+			<!-- <li><a class="icon" href="demo/common/dwz-team.xls"
+				target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li> -->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th>&{'model.field.client.name'}</th>
+				<th>&{'model.field.client.contacts'}</th>
+				<th>&{'model.field.client.direct.line'}</th>
+				<th>&{'model.field.client.remark'}</th>
+				<th width="100">&{'model.field.client.address'}</th>
+			</tr>
+		</thead>
+		<tbody>
+			#{list items:clients, as:'client' }
+			<tr target="sid_client" rel="${client.id}">
+				<!-- <td width="60">${client.id}</td> -->
+				<td><a href="admin/Client/info?id=${client.id}" target="dialog"><span>${client.clientName}</span></a></td>
+				<td><a href="admin/Client/info?id=${client.id}" target="dialog"><span>${client.contacts}</span></a></td>
+				<td><a href="admin/Client/info?id=${client.id}" target="dialog"><span>${client.phone}
+							&nbsp; ${client.directLine}</span></a></td>
+				<td><a href="admin/Client/info?id=${client.id}" target="dialog"><span>${client.remark}</span></a></td>
+				<td>${client.address}</td>
+			</tr>
+			#{/list}
+		</tbody>
+	</table>
+	#{admin.pageBar /}
+</div>

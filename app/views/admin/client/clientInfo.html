@@ -1,0 +1,46 @@
+#{erroeMsg /}
+
+<div class="pageContent">
+	<form method="post" action="admin/client/save"
+		class="pageForm  required-validate"
+		onsubmit="return validateCallback(this, dialogAjaxDone);">
+		<input name="client.id" type="hidden" size="30" value="${client?.id}" />
+		<div class="pageFormContent" layoutH="56">
+			<p>
+				<label>&{'model.field.client.name'}：</label> <input
+					name="client.name" class="required"
+					type="text" size="30"
+					value="${client?.name}" />
+				<!-- remote="admin/client/hasName?"  -->
+			</p>
+			<p>
+				<label>&{'model.field.client.contacts'}：</label> <input
+					name="client.contacts" maxlength="120" type="text"
+					size="30" value="${client?.contacts}" />
+			</p>
+			<p>
+				<label>&{'model.field.client.phone'}：</label> <input
+					name="client.phone" minlength="11" maxlength="12" type="text"
+					size="30" value="${client?.phone}" />
+			</p>
+			<p>
+				<label>&{'model.field.client.direct.line'}：</label> <input
+					name="client.directLine" type="text"
+					size="30" value="${client?.directLine}" />
+			</p>
+			<p>
+				<label>&{'model.field.client.remark'}：</label> <input
+					name="client.remark" type="text" size="30"
+					value="${client?.remark}" />
+			</p>
+			<p>
+				<label>&{'model.field.client.address'}：</label> <input
+					name="client.address" type="text" size="30"
+					value="${client?.address}" />
+			</p>
+		</div>
+		#{admin.formBar /}
+	</form>
+</div>
+
+
